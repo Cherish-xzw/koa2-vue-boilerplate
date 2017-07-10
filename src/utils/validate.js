@@ -1,3 +1,4 @@
+/* eslint no-useless-escape:off */
 // 邮箱验证
 // https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript
 export function validateByEmail(email) {
@@ -28,5 +29,4 @@ export function validatAlphabets(str) {
   const reg = /^[A-Za-z]+$/;
   return reg.test(str);
 }
-
 

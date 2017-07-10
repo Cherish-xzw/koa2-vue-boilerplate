@@ -1,3 +1,4 @@
+/* eslint no-param-reassign:off */
 import { login, logout, getInfo } from '@/api/login';
 import Cookies from 'js-cookie';
 
@@ -29,12 +30,12 @@ const user = {
     Login({ commit }, userInfo) {
       const email = userInfo.email.trim();
       return new Promise((resolve, reject) => {
-        login(email, userInfo.password).then(response => {
+        login(email, userInfo.password).then((response) => {
           const data = response.data;
           Cookies.set('Admin-Token', data.token);
           commit('SET_TOKEN', data.token);
           resolve();
-        }).catch(error => {
+        }).catch((error) => {
           reject(error);
         });
       });
@@ -44,13 +45,13 @@ const user = {
     // 获取用户信息
     GetInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
-        getInfo(state.token).then(response => {
+        getInfo(state.token).then((response) => {
           const data = response.data;
           commit('SET_ROLES', data.role);
           commit('SET_NAME', data.name);
           commit('SET_AVATAR', data.avatar);
           resolve(response);
-        }).catch(error => {
+        }).catch((error) => {
           reject(error);
         });
       });
@@ -64,7 +65,7 @@ const user = {
           commit('SET_ROLES', []);
           Cookies.remove('Admin-Token');
           resolve();
-        }).catch(error => {
+        }).catch((error) => {
           reject(error);
         });
       });
@@ -72,7 +73,7 @@ const user = {
 
     // 前端 登出
     FedLogOut({ commit }) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         commit('SET_TOKEN', '');
         Cookies.remove('Admin-Token');
         resolve();

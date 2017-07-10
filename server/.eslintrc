@@ -1,0 +1,9 @@
+{
+  "extends": "eslint-config-egg",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "linebreak-style":"off"
+  }
+}

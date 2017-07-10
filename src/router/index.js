@@ -1,10 +1,13 @@
+/* eslint import/no-dynamic-require:off, global-require:off */
 import Vue from 'vue';
 import Router from 'vue-router';
-const _import = require('./_import_' + process.env.NODE_ENV);
-// in development env not use Lazy Loading,because Lazy Loading large page will cause webpack hot update too slow.so only in production use Lazy Loading
 
 /* layout */
 import Layout from '../views/layout/Layout';
+
+// in development env not use Lazy Loading,because Lazy Loading large page will
+// cause webpack hot update too slow.so only in production use Lazy Loading
+const _import = require(`./_import_${process.env.NODE_ENV}`);
 
 /* login */
 const Login = _import('login/index');
@@ -21,7 +24,7 @@ const Table = _import('table/index');
 
 Vue.use(Router);
 
- /**
+/**
   * icon : the icon show in the sidebar
   * hidden : if `hidden:true` will not show in the sidebar
   * redirect : if `redirect:noredirect` will not redirct in the levelbar
@@ -39,7 +42,7 @@ export const constantRouterMap = [
     hidden: true,
     children: [{ path: 'dashboard', component: dashboard }]
   }
-]
+];
 
 export default new Router({
   // mode: 'history', //后端支持可开

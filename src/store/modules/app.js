@@ -1,3 +1,4 @@
+/* eslint no-param-reassign:off */
 import Cookies from 'js-cookie';
 
 const app = {
@@ -7,7 +8,7 @@ const app = {
     }
   },
   mutations: {
-    TOGGLE_SIDEBAR: state => {
+    TOGGLE_SIDEBAR: (state) => {
       if (state.sidebar.opened) {
         Cookies.set('sidebarStatus', 1);
       } else {
@@ -18,7 +19,7 @@ const app = {
   },
   actions: {
     ToggleSideBar: ({ commit }) => {
-      commit('TOGGLE_SIDEBAR')
+      commit('TOGGLE_SIDEBAR');
     }
   }
 };
