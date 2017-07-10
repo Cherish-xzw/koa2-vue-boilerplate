@@ -3,13 +3,9 @@ const userInfo = {
   password: "12345678"
 }
 
-const getUserInfo = async function (ctx) {
-  ctx.body = userInfo
-}
-
-const postUserAuth = async function (ctx) {
-  const param = ctx.request.body
-  if (param.name === userInfo.name && param.password === userInfo.password) {
+const postLogin = async function (ctx) {
+  const data = ctx.request.body
+  if (data.email === userInfo.email && data.password === userInfo.password) {
     ctx.body = {
       id: 1,
       success: true,
@@ -31,8 +27,20 @@ const postLogout = async function (ctx) {
   }
 }
 
+const getUserInfo = async function (ctx) {
+  const data = ctx.request.body
+  if(data.id) {
+    ctx.body = userInfo
+  } else {
+    ctx.body = {
+      code: 500,
+      message: '参数错误'
+    }
+  }
+}
+
 export default {
-  getUserInfo,
-  postUserAuth,
-  postLogout
+  postLogin,
+  postLogout,
+  getUserInfo
 }
