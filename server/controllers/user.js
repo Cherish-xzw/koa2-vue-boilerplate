@@ -36,8 +36,8 @@ const postLogout = async function(ctx) {
 const getUserInfo = async function(ctx) {
   ctx.body = {
     data: {
-      name: 'admin',
-      avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+      name: 'Superman',
+      avatar: 'http://7xr387.com1.z0.glb.clouddn.com/little_rabbit.gif',
       roles: [ 'admin' ]
     }
   };

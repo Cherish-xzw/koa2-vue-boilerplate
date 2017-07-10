@@ -1,6 +1,6 @@
 import koaRouter from 'koa-router';
-import homeCtrl from '../controllers/home';
 import authCtrl from '../controllers/user';
+import tableCtrl from '../controllers/table';
 
 const router = koaRouter();
 
@@ -9,6 +9,6 @@ router
   .get('/user/logout', authCtrl.postLogout)
   .get('/user', authCtrl.getUserInfo)
 
-  .get('/livelist', homeCtrl.getLiveList);
+  .get('/table/list', tableCtrl.getList);
 
 export default router;
