@@ -1,7 +1,15 @@
-import api from '../controllers/home.js'
-import koa_router from 'koa-router'
-const router = koa_router()
+import koaRouter from 'koa-router';
 
-router.get('/livelist', api.getLiveList)
+import homeCtrl from '../controllers/home';
+import authCtrl from '../controllers/user';
 
-export default router
+const router = koaRouter();
+
+router
+  .post('/user/login', authCtrl.postLogin)
+  .get('/user/logout', authCtrl.postLogout)
+  .get('/user/info', authCtrl.getUserInfo)
+
+  .get('/livelist', homeCtrl.getLiveList);
+
+export default router;
