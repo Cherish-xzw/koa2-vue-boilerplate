@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
-    <div class='dashboard-text'>current name:{{name}}</div>
-    <div class='dashboard-text'>current role:<span v-for='role in roles' :key='role'>{{role}}</span></div>
+    <div class='dashboard-text'>current name:{{userInfo.name}}</div>
+    <div class='dashboard-text'>current role:<span v-for='role in userInfo.roles' :key='role'>{{role}}</span></div>
   </div>
 </template>
 
@@ -11,8 +11,7 @@
       name: 'dashboard',
       computed: {
         ...mapGetters([
-          'name',
-          'roles'
+          'userInfo',
         ])
       }
     }
