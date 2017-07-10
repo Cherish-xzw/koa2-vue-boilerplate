@@ -1,3 +1,6 @@
+/* eslint no-else-return:0 */
+/* eslint no-param-reassign:0 */
+/* eslint no-shadow:0 */
 import { asyncRouterMap, constantRouterMap } from '@/router/index';
 
 /**
@@ -7,9 +10,9 @@ import { asyncRouterMap, constantRouterMap } from '@/router/index';
  */
 function hasPermission(roles, route) {
   if (route.meta && route.meta.role) {
-    return roles.some(role => route.meta.role.indexOf(role) >= 0)
+    return roles.some(role => route.meta.role.indexOf(role) >= 0);
   } else {
-    return true
+    return true;
   }
 }
 
@@ -22,13 +25,13 @@ function filterAsyncRouter(asyncRouterMap, roles) {
   const accessedRouters = asyncRouterMap.filter(route => {
     if (hasPermission(roles, route)) {
       if (route.children && route.children.length) {
-        route.children = filterAsyncRouter(route.children, roles)
+        route.children = filterAsyncRouter(route.children, roles);
       }
-      return true
+      return true;
     }
-    return false
-  })
-  return accessedRouters
+    return false;
+  });
+  return accessedRouters;
 }
 
 const permission = {
@@ -45,16 +48,16 @@ const permission = {
   actions: {
     GenerateRoutes({ commit }, data) {
       return new Promise(resolve => {
-        const { roles } = data
-        let accessedRouters
+        const { roles } = data;
+        let accessedRouters;
         if (roles.indexOf('admin') >= 0) {
-          accessedRouters = asyncRouterMap
+          accessedRouters = asyncRouterMap;
         } else {
-          accessedRouters = filterAsyncRouter(asyncRouterMap, roles)
+          accessedRouters = filterAsyncRouter(asyncRouterMap, roles);
         }
         commit('SET_ROUTERS', accessedRouters);
         resolve();
-      })
+      });
     }
   }
 };

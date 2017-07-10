@@ -1,3 +1,4 @@
+/* eslint no-param-reassign:0 */
 import { postLogin, postLogout, getUserInfo } from '@/api/user';
 import Cookies from 'js-cookie';
 
@@ -40,7 +41,7 @@ const user = {
 
 
     // 获取用户信息
-    GetInfo({ commit, state }) {
+    GetInfo({ commit }) {
       return new Promise((resolve, reject) => {
         getUserInfo().then(response => {
           const data = response.data;

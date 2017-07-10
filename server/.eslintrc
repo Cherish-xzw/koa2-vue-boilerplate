@@ -4,6 +4,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "linebreak-style":"off"
+    "comma-dangle": 0,
   }
 }

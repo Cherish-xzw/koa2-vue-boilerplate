@@ -1,20 +1,21 @@
+/* eslint no-new:0, no-lonely-if:0, import/first:0, import/extensions:0 */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import store from './store'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
-import NProgress from 'nprogress'
-import 'normalize.css/normalize.css'
-import '@/assets/iconfont/iconfont'
-import IconSvg from '@/components/Icon-svg/index.vue'
+import Vue from 'vue';
+import App from './App';
+import ElementUI from 'element-ui';
+import NProgress from 'nprogress';
+import 'element-ui/lib/theme-default/index.css';
+import 'normalize.css/normalize.css';
+import '@/assets/iconfont/iconfont';
+import IconSvg from '@/components/Icon-svg/index.vue';
+import router from './router';
+import store from './store';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
-Vue.component('icon-svg', IconSvg)
+Vue.component('icon-svg', IconSvg);
 
 const whiteList = ['/login'];
 router.beforeEach((to, from, next) => {
@@ -29,15 +30,15 @@ router.beforeEach((to, from, next) => {
           store.dispatch('GenerateRoutes', { roles }).then(() => {
             router.addRoutes(store.getters.addRouters);
             next({ ...to });
-          })
-        })
+          });
+        });
       } else {
         next();
       }
     }
   } else {
     if (whiteList.indexOf(to.path) !== -1) {
-      next()
+      next();
     } else {
       next('/login');
       NProgress.done();
@@ -55,4 +56,4 @@ new Vue({
   store,
   template: '<App/>',
   components: { App }
-})
+});

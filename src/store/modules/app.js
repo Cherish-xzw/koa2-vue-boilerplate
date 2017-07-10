@@ -1,3 +1,4 @@
+/* eslint no-param-reassign:0 */
 import Cookies from 'js-cookie';
 
 const app = {
@@ -18,7 +19,7 @@ const app = {
   },
   actions: {
     ToggleSideBar: ({ commit }) => {
-      commit('TOGGLE_SIDEBAR')
+      commit('TOGGLE_SIDEBAR');
     }
   }
 };
