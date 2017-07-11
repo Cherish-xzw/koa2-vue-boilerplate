@@ -32,8 +32,10 @@
     "import/no-extraneous-dependencies": ["error", {
       "optionalDependencies": ["test/unit/index.js"]
     }],
-    "linebreak-style":"off",
-    "comma-dangle":"off",
-    "no-underscore-dangle":"off"
+    "linebreak-style": "off",
+    "comma-dangle": "off",
+    "no-underscore-dangle": "off",
+    "arrow-body-style": 0,
+    "arrow-parens": 0
   }
 }

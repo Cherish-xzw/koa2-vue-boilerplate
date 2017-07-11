@@ -1,10 +1,7 @@
-import fetch from '@/utils/fetch';
+import yFetch from '@/utils/yFetch';
 
-export default function getList(params) {
-  return fetch({
-    url: '/table/list',
-    method: 'get',
-    params
-  });
-}
+const getList = () => {
+  return yFetch('/table/list', 'GET');
+};
 
+export default getList;
