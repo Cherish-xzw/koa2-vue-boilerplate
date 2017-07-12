@@ -1,49 +1,54 @@
-# vue-koa-demo
+# Koa2-vue-boilerplate
+> An admin application template using koa2 and vue.
 
-A fullstack demo used Vue2 & Koa2(Koa1 version is [here](https://github.com/Molunerfinn/vue-koa-demo/tree/koa1))
+this boilerplate clone built with [vuejs-templates](https://github.com/vuejs-templates/webpack), based on [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
-![Todolist](http://7xog0l.com1.z0.glb.clouddn.com/vue-koa-demo/todolist-5.gif 'todolist')
+## Environments
+Make sure that you have Node.js v6 or newer and npm installed on your development machine.
 
-View the [article](https://molunerfinn.com/Vue+Koa/) for more details.
+* node ^6.0.0
+* npm ^5.0.0
 
-## Install
+## Clone this repository
 
-`git clone https://github.com/Molunerfinn/vue-koa-demo.git`
+```
+$ git clone http://gitlab.whup.com/UPOem-WebApplication/koa2-vue-boilerplate.git MyApp
+$ cd MyApp
+$ npm install        # Install project dependencies listed in package.json
+```
 
-`npm install` or `yarn`
+If you just want to start a new project without the koa2 boilerplate commit history then you can do:
 
-Also you need to install MySQL & create a database named `todolist`,and execute 2 sql files `list.sql` & `user.sql`.Their are in `sql/`
+```
+$ git clone --depth=1 http://gitlab.whup.com/UPOem-WebApplication/koa2-vue-boilerplate.git MyApp
+```
 
-After that, You need to change the password for mysql user. -> `server/config/db.js`
+The depth=1 tells git to only pull down one commit worth of historical data.
 
-find `mysql://root:XXXX@localhost/todolist` and change the `XXXX` into your own password.
+## In development mode
 
-### Run
+Compile and launch your app by running:
 
-### Node.js
+```
+# Compiles the app and opens it in a browser with "hot reload"
+# running at http://0.0.0.0:3000
 
-Beacuse of using Koa2, `Node.js >= v7.6.0` is needed.
+$ npm run dev
 
-#### Development: 
+```
 
-`npm run dev` && `node app.js`
+```
+# Open the backend API server
+# running at http://0.0.0.0:4000
 
-open browser: `localhost:8080`
-
-> tips: login password is 123
-
-#### Production:
-
-`npm run build` and then `node app.js`
-
-open browser: `localhost:8889`
-
-> tips: login password is 123
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2017 Molunerfinn
+$ npm run server
+```
 
 
+## In porduction mode
+
+A `build` script to bundle JS, CSS, and Images for production, with sourcemaps.
+
+```
+$ npm run build
+```
