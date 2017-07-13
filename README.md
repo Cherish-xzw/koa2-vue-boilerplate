@@ -4,7 +4,7 @@
 this boilerplate clone built with [vuejs-templates](https://github.com/vuejs-templates/webpack), based on [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
 ## Environments
-Make sure that you have Node.js v6 or newer and npm installed on your development machine.
+Make sure that you have Node.js v6 or newer and npm installed on your development machine. Because it will be better
 
 * node ^6.0.0
 * npm ^5.0.0
