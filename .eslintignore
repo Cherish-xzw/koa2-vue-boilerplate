@@ -3,3 +3,4 @@ config/*.js
 test
 node_modules/
 src/assets/iconfont
+dist/
