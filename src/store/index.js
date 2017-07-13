@@ -16,7 +16,7 @@ const store = new Vuex.Store({
     permission
   },
   getters,
-  plugins: isDev ? [createLogger] : []
+  plugins: isDev ? [createLogger()] : []
 });
 
 export default store;
