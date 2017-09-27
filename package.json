@@ -2,7 +2,6 @@
   "name": "koa2-vue-boilerplate",
   "version": "1.0.0",
   "description": "A Vue.js & Koa project",
-  "author": "Molunerfinn <marksz@teamsz.xyz>",
   "private": true,
   "scripts": {
     "dev": "npm-run-all --parallel lint:watch dev:server",
@@ -10,7 +9,7 @@
     "server": "npm-run-all --parallel lint:watch node:server",
     "start": "concurrently -k \"npm run server\" \"npm run dev\"",
     "dev:server": "node build/dev-server.js",
-    "node:server": "nodemon --delay 2000ms -w app.js -w server server-entry.js",
+    "node:server": "nodemon -w app.js -w server index.js",
     "lint": "esw .",
     "lint:watch": "npm run lint -- --watch"
   },
@@ -62,7 +61,9 @@
     "eslint": "^4.2.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-config-egg": "^5.0.0",
+    "eslint-friendly-formatter": "^3.0.0",
     "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-watch": "^3.1.2",
@@ -93,7 +94,7 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 6.0.0",
+    "npm": ">= 5.0.0"
   }
 }

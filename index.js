@@ -8,4 +8,4 @@ require('babel-core/register')({
   ],
   ignore: /node_modules\/(?!koa-*)/,
 });
-require('./app.js');
+require('./server/app.js');

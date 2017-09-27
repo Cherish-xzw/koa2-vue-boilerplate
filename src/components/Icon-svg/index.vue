@@ -15,8 +15,8 @@
     },
     computed: {
       iconName() {
-        return `#icon-${this.iconClass}`
+        return `#icon-${this.iconClass}`;
       }
     }
-  }
+  };
 </script>

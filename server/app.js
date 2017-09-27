@@ -7,7 +7,7 @@ import historyApiFallback from 'koa2-history-api-fallback';
 import Router from 'koa-router';
 import bodyparser from 'koa-bodyparser';
 
-import api from './server/routes/api';
+import api from './routes/api';
 
 const app = new Koa();
 const router = Router();
@@ -41,7 +41,7 @@ app.use(async (ctx, next) => {
   }
 });
 
-app.on('error', (err) => {
+app.on('error', err => {
   console.log('server error', err);
 });
 

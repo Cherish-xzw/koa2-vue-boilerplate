@@ -44,6 +44,12 @@ $ npm run dev
 $ npm run server
 ```
 
+Or start frontend and backend together
+```
+# Start frontent and backend concurrently
+$ npm start
+```
+
 
 ## In porduction mode
 

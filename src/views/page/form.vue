@@ -61,10 +61,11 @@
           resource: '',
           desc: ''
         }
-      }
+      };
     },
     methods: {
       onSubmit() {
+        /* eslint no-console:0*/
         console.log('submit!');
       }
     }
