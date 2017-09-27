@@ -58,3 +58,23 @@ A `build` script to bundle JS, CSS, and Images for production, with sourcemaps.
 ```
 $ npm run build
 ```
+
+## Release
+`release` script can bundle everything we need to publish our code to productiion environment.
+
+```
+$ npm run release
+```
+**Note:** This is script can only running at *nix-like commmand line.
+
+## Problem
+
+> Can't install node-sass ?
+
+put this lines in you ~/.npmrc file and ` npm install ` again.
+
+```
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs
+electron_mirror=http://npm.taobao.org/mirrors/electron/
+```
