@@ -63,7 +63,7 @@ const errorHandler = (ex) => {
     localStorage.removeItem('user');
     location.href = '/login';
   } else if (ex.statusCode === 400 || ex.statusCode === 401) {
-    console.log(ex.message);
+    // console.log(ex.message);
     // message.error(ex.message)
   }
 

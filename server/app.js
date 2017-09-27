@@ -6,6 +6,7 @@ import serve from 'koa-static';
 import historyApiFallback from 'koa2-history-api-fallback';
 import Router from 'koa-router';
 import bodyparser from 'koa-bodyparser';
+import render from 'koa-ejs';
 
 import api from './routes/api';
 
@@ -41,6 +42,13 @@ app.use(async (ctx, next) => {
   }
 });
 
+render(app, {
+  root: path.join(__dirname, 'view'),
+  layout: 'index',
+  viewExt: 'html',
+  cache: false,
+});
+
 app.on('error', err => {
   console.log('server error', err);
 });
@@ -49,16 +57,24 @@ app.on('error', err => {
 // router.use("/api",jwt({secret: 'vue-koa-demo'}),api.routes())
 router.use('/api', api.routes());
 
+router.get('/', async ctx => {
+  await ctx.render('index');
+});
+
 // 将路由规则挂载到Koa上
 app.use(router.routes());
 
 app.use(historyApiFallback());
 
 // 将webpack打包好的项目目录作为Koa静态文件服务的目录
-app.use(serve(path.resolve('dist')));
+app.use(
+  serve(path.resolve(__dirname, './public'), {
+    maxage: 1000 * 60 * 60 * 24 * 30 // a month
+  })
+);
 
 app.listen(4000, () => {
-  console.log('Koa is listening in 4000');
+  console.log('Koa is served at http://localhost:4000');
 });
 
 export default app;
