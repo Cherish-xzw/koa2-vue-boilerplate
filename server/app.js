@@ -13,6 +13,9 @@ import api from './routes/api';
 const app = new Koa();
 const router = Router();
 
+const PORT = process.env.HTTP_PORT || 4000;
+const IP = process.env.HTTP_IP || '0.0.0.0';
+
 app.use(bodyparser());
 app.use(json());
 app.use(logger());
@@ -73,8 +76,8 @@ app.use(
   })
 );
 
-app.listen(4000, () => {
-  console.log('Koa is served at http://localhost:4000');
+app.listen(PORT, IP, () => {
+  console.log(`Koa is served at http://${IP}:${PORT}`);
 });
 
 export default app;
