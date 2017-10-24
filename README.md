@@ -12,7 +12,7 @@ Make sure that you have Node.js v6 or newer and npm installed on your developmen
 ## Clone this repository
 
 ```
-$ git clone http://gitlab.whup.com/UPOem-WebApplication/koa2-vue-boilerplate.git MyApp
+$ git clone https://github.com/Cherish-xzw/koa2-vue-boilerplate.git MyApp
 $ cd MyApp
 $ npm install        # Install project dependencies listed in package.json
 ```
@@ -20,7 +20,7 @@ $ npm install        # Install project dependencies listed in package.json
 If you just want to start a new project without the koa2 boilerplate commit history then you can do:
 
 ```
-$ git clone --depth=1 http://gitlab.whup.com/UPOem-WebApplication/koa2-vue-boilerplate.git MyApp
+$ git clone --depth=1 https://github.com/Cherish-xzw/koa2-vue-boilerplate.git MyApp
 ```
 
 The depth=1 tells git to only pull down one commit worth of historical data.
@@ -75,6 +75,6 @@ put this lines in you ~/.npmrc file and ` npm install ` again.
 
 ```
 sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
-phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs
-electron_mirror=http://npm.taobao.org/mirrors/electron/
+phantomjs_cdnurl=https://npm.taobao.org/mirrors/phantomjs/
+electron_mirror=https://npm.taobao.org/mirrors/electron/
 ```
