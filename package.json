@@ -42,7 +42,7 @@
     "bcryptjs": "^2.4.0",
     "element-ui": "^1.2.9",
     "js-cookie": "^2.1.4",
-    "node-sass": "^4.5.3",
+    "node-sass": "^7.0.0",
     "normalize.css": "^7.0.0",
     "nprogress": "^0.2.0",
     "sass-loader": "^6.0.6",
